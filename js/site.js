@@ -1,22 +1,22 @@
 //get the values from the users.
 function getValues(){
-    let startValue = document.getElementById("startValue").value;
-    let endValue = document.getElementById("endValue").value;
+    let fizzValue = document.getElementById("fizzValue").value;
+    let buzzValue = document.getElementById("buzzValue").value;
 
     //parse our input into integers.
-    startValue = parseInt(startValue);
-    endValue = parseInt(endValue);
+    fizzValue = parseInt(fizzValue);
+    buzzValue = parseInt(buzzValue);
 
     //Check to see if they are in fact integers. 
     // TRUE AND TRUE
     // FALSE AND TRUE = FALSE
     //truthy
-    if(Number.isInteger(startValue) && Number.isInteger(endValue) ){
+    if(Number.isInteger(fizzValue) && Number.isInteger(buzzValue) ){
 
         //generate the numbers
-        let number = generateFizzBuzz(startValue, endValue);
+        let fizzArray = generateFizzBuzz(fizzValue, buzzValue);
         //display the numbers
-        displayFizzBuzz(number);
+        displayFizzBuzz(fizzArray);
     }
     else{
         //do something else
@@ -25,38 +25,57 @@ function getValues(){
 }
 
 //generate numbers
-function generateFizzBuzz(sValue, eValue){
+function generateFizzBuzz(fizzValue, buzzValue){
 
-    let numbers = [];
+    let fizzArray = [];
 
-    for(i = sValue; i<=eValue; i++){
-        numbers.push(i);
-    }
-
-    return numbers;
-}
-
-//display numbers
-function displayFizzBuzz(numbers){
-
-    let templateCols = "";
-
-    //check for if the number is even.
-    //"<div>0</div>"
-    //loop over an array
-    for(let index=0; index < numbers.length; index++){
+     for(let index=1; index <= 100; index++){
 
         let className = "";
 
-        if(numbers[index] % 2 == 0){
-            className = "even";
+        if(index % fizzValue == 0 && index % buzzValue == 0){
+
+            className = "fizzBuzz";
+
+            fizzArray.push(className);
+    
+        }    
+        else if(index % fizzValue == 0){
+            
+            className = "fizz";
+
+            fizzArray.push(className);            
+            
+        }
+
+        else if(index % buzzValue == 0){
+            
+            className = "buzz";
+
+            fizzArray.push(className);
+
         }
         else{
-            className = "odd";
+            fizzArray.push(index);
         }
-        templateCols += `<div class="${className}">${numbers[index]}</div>`;
     }
 
+    return fizzArray;
+}
+
+//display numbers
+function displayFizzBuzz(fizzArray){
+
+    let templateCols = "";
+
+    //loop over an array
+    for(let index=0; index < fizzArray.length; index++){
+
+        let className = "";              
+
+        templateCols += `<div class="col">${fizzArray[index]}</div>`;
+    }   
+    
     document.getElementById("resultsFizzBuzz").innerHTML = templateCols;{
 
     }

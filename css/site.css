@@ -97,13 +97,19 @@ footer i:hover{
     color: var(--cf-theme-200);
 }
 
-.even{
+.fizz{
     font-weight: bold;
     color: red;
     font-size: 1.5rem;
     background-color:  var(--ss-dark-color);
 }
 
-.odd{
-    font-style: italic;
+.buzz{
+    color:orange;
+    font-size: 4rem;
+}
+
+.fizzBuzz{
+    color: blue;
+    font-size: 3rem;
 }
