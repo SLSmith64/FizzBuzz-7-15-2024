@@ -35,7 +35,8 @@
 
     <!--Custom CSS-->
     <link rel="stylesheet" href="/css/themes.css">
-    <link rel="stylesheet" href="/css/site.css">
+    <link rel="stylesheet" href="/css/(Code-Along)site.css">
+
 </head>
 
 <body data-cf-theme="blue">
@@ -57,12 +58,12 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="app.html">The App</a>
+                            <a class="nav-link" href="app.html">The App</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="(Code-Along)app.html">The(Code-Along)App</a>
+                            <a class="nav-link active" aria-current="page"
+                                href="(Code-Along)app.html">The(Code-Along)App</a>
                         </li>
-                            
                         <li class="nav-item">
                             <a class="nav-link" href="code.html">The Code</a>
                         </li>
@@ -81,11 +82,12 @@
         <div class="container mt-5">
             <h1>FizzBuzz: a coding Challenge</h1>
             <div class="mb-4">Live life one loop at a time. A javascript coding challenge that displays the numbers from
-                0 to 100. "fizz" for multiples of 3, "buzz for multiples of 5, "fizz buzz" for multiples of both.</div>
+                0 to 100. "fizz" for multiples of 3, "buzz for multiples of 5, "fizz buzz" for multiples of both.
+            </div>
 
-            <h2 class="border-bottom border-2 mb-3">Instructions: Enter stuff</h2>
+            <h2 class="border-bottom border-2 mb-3">Instructions: Enter stuff, click button</h2>
 
-            <div class="row">
+            <div class="row gy-3 mt-5">
                 <!--Fizz Value-->
                 <div class="col">
                     <label class="form-label" for="fizzValue">Fizz Value:</label>
@@ -96,18 +98,21 @@
                     <label class="form-label" for="buzzValue">Buzz Value:</label>
                     <input id="buzzValue" type="number" class="form-control" value="5">
                 </div>
+                <!--Stop Value-->
+                <div class="col">
+                    <label class="form-label" for="stopValue">Stop Value:</label>
+                    <input id="stopValue" type="number" class="form-control" value="100">
+                </div>
                 <div class="col-12 text-end">
                     <button type="button" id="btnSubmit" class="btn btn-primary">Display</button>
                 </div>
-
-                <div class="row gy-3 mt-3" id="resultsFizzBuzz">
+                <div class="row gy-3 mt-3" id="resultsData">
                     <div class="col-12">
                         <h2 class="border-bottom border-2">Results</h2>
                     </div>
                     <div class="col">
-                        <div class="row row-cols-2 row-cols-md-5" id="resultsFizzBuzz">
+                        <div class="row row-cols-2 row-cols-md-5" id="resultsData">
                             <!-- Results go here-->
-                            
                         </div>
                     </div>
                 </div>
@@ -135,10 +140,10 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!--Custom JS-->
-    <script src="/js/site.js"></script>
+    <script src="/js/(Code-Along)site.js"></script>
 
     <script>
         document.getElementById("btnSubmit").addEventListener("click", getValues);
@@ -146,4 +151,4 @@
 
 </body>
 
-</html> 
+</html>
